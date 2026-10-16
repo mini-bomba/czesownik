@@ -5,3 +5,6 @@ class Category(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=256)
     description = models.TextField()
+
+    def __str__(self) -> str:
+        return f"Category {self.id}: {self.name}"

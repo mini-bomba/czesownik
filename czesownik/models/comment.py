@@ -13,3 +13,6 @@ class Comment(models.Model):
     attachment = models.FileField(upload_to="comments/", null=True, blank=True)
     posted_at = models.DateTimeField(auto_now_add=True)
     edited_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self) -> str:
+        return f"Comment by {self.author.username} ID {self.id} on thread {self.thread.id}"

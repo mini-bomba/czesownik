@@ -13,3 +13,6 @@ class Thread(models.Model):
     attachment = models.FileField(upload_to="threads/", null=True, blank=True)
     posted_at = models.DateTimeField(auto_now_add=True)
     edited_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self) -> str:
+        return f"Thread by {self.author.username} ID {self.id} in category {self.category.name}"
